@@ -26,7 +26,7 @@
       <article class="legal-doc-content">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">
-          Last updated: <strong>March 27, 2026</strong>
+          Last updated: <strong>May 10, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
@@ -41,10 +41,11 @@
 
           <h2>Who we are</h2>
           <p>
-            <strong>Art Block</strong> is a mobile app for scheduling and
-            logging creative practice. It is developed and published by an
-            independent operator based in <strong>Quebec, Canada</strong>, using
-            the <strong>Art Block</strong> name in the App Store and related
+            <strong>Art Block</strong> is a mobile app for scheduling, logging,
+            and (optionally) sharing creative practice. It is developed and
+            published by an independent operator based in
+            <strong>Quebec, Canada</strong>, using the
+            <strong>Art Block</strong> name in the App Store and related
             materials.
           </p>
           <p>
@@ -56,139 +57,295 @@
             there, or as described under <strong>Contact</strong> below.
           </p>
 
-          <h2>Information we collect</h2>
+          <h2>Backend providers we use</h2>
           <p>
-            Art Block is built for scheduling and logging your own creative
-            practice on your device. There is <strong>no Art Block login or
-            account</strong> we run for you; what we process is mostly what stays
-            on your phone or tablet, plus limited data needed for subscriptions
-            (see below).
-          </p>
-          <p>
-            <strong>Optional “share” images.</strong> If you choose to create a
-            shareable image after a session, that image is generated
-            <strong>on your device</strong>. It is not posted to us. If you use
-            your device’s share sheet to send it to another app or message,
-            <strong>that app’s or platform’s privacy policy applies there</strong>,
-            not this one.
-          </p>
-          <p>
-            <strong>There is no separate Art Block login.</strong> Profile details,
-            practice logs, and preferences you enter are stored
-            <strong>on your device</strong>. Paid access is purchased through the
-            App Store; we use <strong>RevenueCat</strong> to manage subscription
-            validation and entitlements on our behalf, as described under
-            <strong>Sharing</strong>.
+            Art Block relies on a small number of third-party processors to run
+            the Service on our behalf:
           </p>
           <ul>
             <li>
-              <strong>Information you provide or generate in the app</strong>
-              — for example name or labels you add to your profile, art practice
-              logs, session notes, images you attach to sessions, preferences,
-              and other content you choose to enter (stored locally on your
-              device).
+              <strong>Apple</strong> — App Store distribution, in-app purchases,
+              local notification delivery, and platform-level protections.
             </li>
             <li>
-              <strong>Photos and images you choose</strong> — if you add a
-              profile photo or attach images (for example to a session), the app
-              accesses your photo library <strong>only when you select items</strong>;
-              image data is kept in app storage on your device. We do not
-              upload your session images to servers we operate.
+              <strong>RevenueCat</strong> —
+              <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a>
+              validates App Store purchases and manages subscription
+              entitlements. It may process device identifiers and purchase /
+              transaction information.
             </li>
             <li>
-              <strong>Information stored on your device</strong> — core activity
-              data is stored <strong>locally on your device</strong>. Platform-level
-              backups (for example iCloud device backup) are governed by your
-              device and Apple’s settings, not by us.
-            </li>
-            <li>
-              <strong>Notifications</strong> — if you turn on practice reminders,
-              the Service may schedule <strong>local notifications</strong> on
-              your device. We do not use these for marketing; you can turn them
-              off in the app or in your device settings.
-            </li>
-            <li>
-              <strong>Payment-related information</strong> — paid features are
-              purchased through the platform (for example Apple’s App Store). We
-              do not receive your full payment card details. We receive limited
-              information about whether your subscription is active. We use
-              <strong>RevenueCat</strong>, a subscription management provider,
-              which may process identifiers and transaction-related data needed
-              to validate purchases and entitlements; see
-              <strong>Sharing</strong> and RevenueCat’s privacy documentation.
-            </li>
-            <li>
-              <strong>Device and technical data</strong> — such as device type,
-              operating system, app version, and diagnostics or crash-related
-              information where allowed by your device settings and the platform.
-              If we add third-party crash or analytics tools, we will describe
-              them here and update this policy before or when they go live.
-            </li>
-            <li>
-              <strong>Future features.</strong> We may add capabilities later
-              (for example optional accounts, cloud backup or sync, or analytics).
-              If we launch something that stores your content on our servers or
-              with a new vendor, we will update this policy first and describe
-              new collections and providers clearly.
+              <strong>Supabase</strong> —
+              <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase</a>
+              hosts the Art Block backend. Cloud backup of your practice
+              content, your social profile, your shared sessions and any cover
+              photos you attach to them, your follows / groups / likes /
+              comments, your in-app notifications, and your moderation actions
+              (blocks, mutes, reports) are stored on Supabase infrastructure.
+              Files (such as session cover photos, profile avatars, and group
+              avatars / banners) are kept in Supabase Storage.
             </li>
           </ul>
+          <p>
+            Supabase data is currently hosted on infrastructure located outside
+            Canada (typically in the United States, depending on the
+            project region). If we move to a different region we will update
+            this policy.
+          </p>
+
+          <h2>Information we collect</h2>
+          <p>
+            Art Block is <strong>local-first</strong>: your practice journal
+            lives on your device, with cloud backup keeping a copy on our
+            backend so you can move between devices. The optional social
+            features additionally let you share parts of your practice with
+            other people you choose to follow.
+          </p>
+
+          <h3>1. Account identifier</h3>
+          <p>
+            When you first use a feature that requires the backend (cloud
+            backup or anything social), the app
+            <strong>automatically creates an account</strong> on Supabase tied
+            to a randomly generated identifier. You don’t have to type a
+            username or password — the credentials are generated and stored
+            securely on your device. We may later introduce
+            <strong>optional “Sign in with Apple” or “Sign in with Google”</strong>
+            so you can recover your account on a new device. We will update
+            this policy before that ships.
+          </p>
+
+          <h3>2. Practice content (cloud backup)</h3>
+          <p>
+            With cloud backup enabled, the app uploads a copy of your local
+            practice content — your scheduled practices, session logs, focused
+            minutes, notes, mediums and pursuits — to your private row on
+            Supabase. Only you (the signed-in account) can read this row.
+            We do not analyse the contents of your practice journal.
+          </p>
+
+          <h3>3. Social profile (only if you turn social on)</h3>
+          <p>
+            Turning social on stores a public-style profile keyed to your
+            account: <strong>username, bio, profile avatar, discoverability
+            preference, and whether you require manual approval for follow
+            requests</strong>. Other Art Block users may see this profile if
+            you make yourself discoverable, or if they look you up by username.
+          </p>
+
+          <h3>4. Shared sessions, likes, and comments</h3>
+          <p>
+            When you share a practice session — manually or via the
+            <em>auto-share</em> setting — a copy of that session
+            (<strong>title, category, mediums summary, focused minutes, log
+            time, your note, and the cover photo you attached, if any</strong>)
+            is published to your Art Block feed at the visibility you chose
+            (private, followers, public, or to a specific group). Cover images
+            are uploaded to <strong>Supabase Storage</strong> and served
+            through short-lived signed URLs. Other users’ likes, comments, and
+            timestamps are stored against that session row.
+          </p>
+
+          <h3>5. Followers, following, and groups</h3>
+          <p>
+            We store your follow relationships, follow requests (incoming /
+            outgoing / accepted / declined), group memberships, group session
+            templates you create or adopt, and (for group admins) group avatar
+            / banner images. Group leaderboards and feeds are produced from
+            this data.
+          </p>
+
+          <h3>6. In-app notifications</h3>
+          <p>
+            When someone follows you, requests to follow you, accepts your
+            follow request, or likes / comments on a session you shared, we
+            create an in-app notification row referencing the actor and the
+            related entity. You can <strong>turn most notification categories
+            off in Settings</strong> (follow, likes, comments). Follow-request
+            and follow-accepted notifications stay on because they are
+            actionable. All notifications today are
+            <strong>in-app only</strong>; we do not currently send marketing or
+            push notifications. Practice reminders are scheduled as
+            <strong>local notifications</strong> on your device.
+          </p>
+
+          <h3>7. Moderation data (blocks, mutes, reports)</h3>
+          <p>
+            We store the following so the app’s safety features work:
+          </p>
+          <ul>
+            <li>
+              <strong>Blocks</strong> — pairs of (blocker, blocked) account
+              identifiers. Blocking another user also hard-deletes any prior
+              follows, follow requests, likes, comments and notifications
+              between the two of you.
+            </li>
+            <li>
+              <strong>Mutes</strong> — pairs of (muter, muted) identifiers.
+              The muted user is not told they were muted.
+            </li>
+            <li>
+              <strong>Reports</strong> — when you report a session or profile,
+              we store the reporter’s account identifier, the reported user’s
+              account identifier, the reported session id (if any), the
+              category you chose, and any short text you added.
+              <strong>The Art Block operator can review reports for moderation
+              purposes.</strong> Reports are not visible to other users.
+            </li>
+          </ul>
+
+          <h3>8. Anti-abuse rate-limit log</h3>
+          <p>
+            To prevent automation and accidental loops from overloading the
+            Service, the backend keeps a short, append-only log of write
+            attempts (follow, like, comment, publish session, change session
+            cover) keyed to your account. Entries are
+            <strong>automatically deleted within roughly an hour</strong>. The
+            log is not exposed to clients and is only used to enforce
+            per-user thresholds.
+          </p>
+
+          <h3>9. Photos and images you choose</h3>
+          <p>
+            If you attach a cover photo to a session, set a profile avatar, or
+            add a group banner, the app accesses your photo library
+            <strong>only when you select an item</strong>. We re-encode the
+            chosen image to a small JPEG before uploading. Avatar bytes are
+            stored on the corresponding profile / group row; session covers
+            are stored as files in Supabase Storage.
+          </p>
+          <p>
+            Art Block <strong>does not</strong> read your contacts, calendar,
+            location, microphone, or device identifiers for advertising. The
+            “Find friends” screen is a username search only.
+          </p>
+
+          <h3>10. Payment-related information</h3>
+          <p>
+            Paid features are purchased through Apple’s App Store. We do not
+            receive your full payment card details. RevenueCat receives the
+            transaction information needed to validate purchases and report
+            entitlements.
+          </p>
+
+          <h3>11. Device and technical data</h3>
+          <p>
+            Such as device type, operating system, app version, and crash /
+            diagnostic information allowed by your device settings. If we add
+            third-party crash or analytics tools, we will list them here and
+            update this policy before they go live.
+          </p>
 
           <h2>How we use information</h2>
           <p>We use personal information to:</p>
           <ul>
             <li>Provide, maintain, and improve the Service;</li>
-            <li>Manage subscriptions and entitlements (including through RevenueCat);</li>
-            <li>Personalize your experience on your device (for example pursuits, schedules, reminders);</li>
-            <li>Communicate with you about the Service (for example support);</li>
+            <li>Sync your practice content across your devices via cloud backup;</li>
+            <li>
+              Operate the optional social layer — show your profile to people
+              you’ve made yourself visible to, deliver follow / like / comment
+              / group activity, and route in-app notifications;
+            </li>
+            <li>Manage subscriptions and entitlements (through RevenueCat);</li>
+            <li>
+              Enforce our Terms of Use and protect users — for example by
+              honouring blocks and mutes, applying server-side rate limits,
+              reviewing reports, and removing or restricting content or
+              accounts where appropriate;
+            </li>
             <li>Detect, prevent, and address technical or security issues, abuse, or fraud;</li>
             <li>Comply with law and protect rights, safety, and security.</li>
           </ul>
 
-          <h2>Storage and international transfers</h2>
+          <h2>How information is shared with other users</h2>
           <p>
-            Your practice content and preferences are intended to stay
-            <strong>on your device</strong>. If you delete
-            the app or app data using your platform’s controls, locally stored
-            information may be removed, subject to how your device handles
-            backups (for example iCloud). Subscription and entitlement
-            processing through RevenueCat may involve retention on their systems
-            according to their policy and your platform account; that may
-            include servers outside Canada.
+            Most of what the social features store is intentionally visible to
+            other users. The visibility you choose for each shared session
+            controls who can see it:
           </p>
+          <ul>
+            <li>
+              <strong>Private</strong> — only you see it on your profile.
+            </li>
+            <li>
+              <strong>Followers</strong> — visible to accounts that follow you.
+            </li>
+            <li>
+              <strong>Public</strong> — visible to any signed-in Art Block user
+              who can find you (subject to discoverability and follow-approval
+              settings).
+            </li>
+            <li>
+              <strong>Group</strong> — visible only to active members of the
+              group you tagged.
+            </li>
+          </ul>
           <p>
-            If we later offer optional cloud storage or similar, we will explain
-            where data is stored and update this policy before those features
-            collect new categories of information.
-          </p>
-          <p>
-            We retain personal information only as long as reasonably needed for
-            the purposes described in this policy, unless a longer period is
-            required or permitted by law.
+            Your username, bio, avatar, follower / following counts, and any
+            sessions you choose to publish at <em>followers</em> or
+            <em>public</em> may be shown to other Art Block users. Likes and
+            comments you leave on someone else’s session are visible to the
+            audience that can see that session.
           </p>
 
-          <h2>Sharing</h2>
+          <h2>Storage, retention, and international transfers</h2>
+          <p>
+            Cloud backup, social, and moderation data are stored on
+            <strong>Supabase</strong> infrastructure (currently outside Canada,
+            typically in the United States). Subscription processing through
+            RevenueCat may also involve servers outside Canada.
+          </p>
+          <p>
+            We retain personal information only as long as reasonably needed
+            for the purposes described in this policy:
+          </p>
+          <ul>
+            <li>
+              Your <strong>cloud backup</strong> persists until you delete the
+              data through the app, or you delete your account.
+            </li>
+            <li>
+              <strong>Shared sessions, likes, and comments</strong> persist
+              until you delete them or your account.
+            </li>
+            <li>
+              <strong>Notifications</strong> are pruned over time and you can
+              dismiss them individually.
+            </li>
+            <li>
+              <strong>Reports</strong> may be retained even after the related
+              session or account is removed, where reasonably necessary for
+              safety, abuse prevention, or to meet legal obligations.
+            </li>
+            <li>
+              <strong>Rate-limit log entries</strong> are removed within
+              roughly an hour.
+            </li>
+          </ul>
+
+          <h2>Sharing with third parties</h2>
           <p>
             We do not sell your personal information. We may share information
             with:
           </p>
           <ul>
             <li>
-              <strong>Platform providers</strong> — such as Apple, to operate
-              distribution, subscriptions, and platform-level protections.
+              <strong>Apple</strong> — to operate distribution, subscriptions,
+              and platform-level protections.
             </li>
             <li>
-              <strong>Subscription management (RevenueCat)</strong> — we use
-              <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a>
-              to validate App Store purchases, manage entitlements, and perform
-              related technical operations. RevenueCat may process identifiers
-              and purchase-related information on their systems. How they
-              handle personal information is described in their privacy policy.
+              <strong>RevenueCat</strong> — to validate App Store purchases,
+              manage entitlements, and perform related technical operations.
             </li>
             <li>
-              <strong>Other service providers</strong> — today this is mainly
-              your platform (Apple) and RevenueCat. If we add other vendors (for
-              example email delivery or analytics), we will list them here when
-              they apply.
+              <strong>Supabase</strong> — as our hosting and database
+              processor, for cloud backup, the social features, file storage,
+              and authentication.
+            </li>
+            <li>
+              <strong>Other service providers</strong> — if we add new vendors
+              (for example email delivery, push notifications, or analytics),
+              we will list them here when they apply.
             </li>
             <li>
               <strong>Legal or safety</strong> — when required by law, legal
@@ -200,48 +357,78 @@
           <h2>Your choices and rights</h2>
           <ul>
             <li>
-              You may be able to access, export, correct, or delete certain
-              information from within the app, depending on the feature.
+              You can <strong>turn social off</strong> at any time in Settings.
+              When social is off you are not discoverable, your profile is not
+              shown to other users, and auto-share is disabled.
             </li>
             <li>
-              You can delete the app or use your device’s settings to clear app
-              data where the Service stores information only on the device.
+              You control your <strong>discoverability</strong>, whether
+              follows require <strong>manual approval</strong>, the
+              <strong>default audience</strong> for shared sessions, and which
+              <strong>notification categories</strong> generate activity rows
+              for you.
+            </li>
+            <li>
+              You can <strong>delete</strong> your shared sessions, likes,
+              comments, follows, and groups from inside the app. Deleting a
+              shared session also removes its cover photo from Supabase
+              Storage.
+            </li>
+            <li>
+              You can <strong>block</strong> or <strong>mute</strong> any other
+              user from their profile or any of their cards in the feed.
+            </li>
+            <li>
+              You can <strong>report</strong> a session or profile that
+              violates our Terms.
+            </li>
+            <li>
+              You can request <strong>full account deletion</strong> (cloud
+              backup, social profile, shared sessions, follows, groups, etc.)
+              by contacting us as described under <strong>Contact</strong>.
+              Some moderation records (such as past reports filed by or
+              against you) may be retained where reasonably necessary for
+              safety or to meet legal obligations.
             </li>
             <li>
               If you are in Canada, including Quebec, you may have rights to
               access your personal information, correct inaccuracies, withdraw
-              consent where processing is consent-based, and obtain information
-              about how we handle personal information, subject to applicable
-              exceptions. You may also have the right to challenge compliance and,
-              where applicable, to request cessation of dissemination or
-              de-indexation in line with local law.
+              consent where processing is consent-based, and obtain
+              information about how we handle personal information, subject to
+              applicable exceptions. You may also have the right to challenge
+              compliance and, where applicable, to request cessation of
+              dissemination or de-indexation in line with local law.
             </li>
             <li>
               To exercise these rights, contact us as described under
-              <strong>Contact</strong>. We may need to verify your identity before
-              responding.
+              <strong>Contact</strong>. We may need to verify your identity
+              before responding.
             </li>
           </ul>
 
           <h2>Children</h2>
           <p>
-            The Service is a productivity and journaling style tool for artists;
-            it is <strong>not directed at children under 13</strong>. We do not
-            knowingly collect personal information from children under 13. If you
-            are a parent or guardian and believe a child has provided us with
-            personal information, please contact us using the details under
-            <strong>Contact</strong> and we will take reasonable steps to delete
-            it. Age thresholds and consent rules can vary by region; additional
-            requirements may apply where local law says so.
+            The Service is a productivity and journaling style tool for
+            artists; it is <strong>not directed at children under 13</strong>.
+            We do not knowingly collect personal information from children
+            under 13. If you are a parent or guardian and believe a child has
+            provided us with personal information, please contact us using the
+            details under <strong>Contact</strong> and we will take reasonable
+            steps to delete it. Age thresholds and consent rules can vary by
+            region; additional requirements may apply where local law says so.
+            The social features in particular are not intended for users under
+            13, and we may suspend accounts we reasonably believe are used in
+            violation of these age requirements.
           </p>
 
           <h2>Changes</h2>
           <p>
-            We may update this policy from time to time. When we do, we will post
-            the updated version on this page and change the “Last updated” date
-            above. If we introduce accounts, cloud sync, analytics, or other
-            capabilities that change what we collect, we will describe that here
-            and, where practical, surface a short notice in the app.
+            We may update this policy from time to time. When we do, we will
+            post the updated version on this page and change the “Last
+            updated” date above. If we materially expand what we collect — for
+            example by adding push notifications, a public web profile,
+            advertising, or new third-party processors — we will surface a
+            notice in the app where practicable.
           </p>
 
           <h2>Contact</h2>
@@ -255,8 +442,9 @@
               <strong>Apple App Store</strong> listing for Art Block.
             </li>
             <li>
-              If we publish a dedicated email address for privacy requests, we
-              will add it here so you can reach us directly.
+              If we publish a dedicated email address for privacy or account
+              deletion requests, we will add it here so you can reach us
+              directly.
             </li>
           </ul>
           <p class="legal-meta">
@@ -268,7 +456,8 @@
           <p>
             Apple Inc. has its own privacy policy governing its platforms; for
             App Store, iOS, and related payment processing, see Apple’s
-            documentation for how Apple handles data.
+            documentation for how Apple handles data. Supabase and RevenueCat
+            also publish their own privacy policies; see the links above.
           </p>
         </div>
       </article>
