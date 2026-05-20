@@ -1,3 +1,54 @@
+/* Art Block — Inter & Lora (local files in /Fonts) */
+@font-face {
+  font-family: "Inter";
+  src: url("../Fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../Fonts/Inter_18pt-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../Fonts/Inter_18pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../Fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../Fonts/Lora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../Fonts/Lora-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../Fonts/Lora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Art Block marketing site — light-mode palette (parchment, ink, accent) */
 :root {
   --bg: #f2f2f7;
@@ -532,12 +583,15 @@ button.btn-primary:focus-visible {
   font-size: 14px;
 }
 
-/* Follows feature section: avoid stacking two large section paddings */
+/* Creator — prose card centered in photo band */
 .section--creator {
   position: relative;
   overflow: hidden;
-  padding-top: 0;
-  padding-bottom: clamp(120px, 26vw, 280px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(100vh, 56rem);
+  padding: clamp(4rem, 12vh, 7rem) 0;
 }
 .creator-bg {
   position: absolute;
@@ -547,15 +601,15 @@ button.btn-primary:focus-visible {
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    #000 14%,
-    #000 86%,
+    #000 6%,
+    #000 94%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    #000 14%,
-    #000 86%,
+    #000 6%,
+    #000 94%,
     transparent 100%
   );
   mask-size: 100% 100%;
@@ -565,28 +619,56 @@ button.btn-primary:focus-visible {
 }
 .creator-bg-collage {
   position: absolute;
-  inset: -4% -2%;
+  inset: -8% -4%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  opacity: 0.9;
+  gap: 0;
+  opacity: 1;
 }
 .creator-bg-img {
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  min-height: 420px;
   object-fit: cover;
   object-position: center;
 }
 .creator-bg-img--left {
-  object-position: 38% 45%;
-  transform: scale(1.06);
-  transform-origin: 40% 50%;
+  object-position: 38% 42%;
+  transform: scale(1.1);
+  transform-origin: 42% 48%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.35) 78%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.35) 78%,
+    transparent 100%
+  );
 }
 .creator-bg-img--right {
-  object-position: 62% 50%;
-  transform: scale(1.06);
+  object-position: 62% 48%;
+  transform: scale(1.1);
   transform-origin: 58% 50%;
+  -webkit-mask-image: linear-gradient(
+    to left,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.35) 78%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.35) 78%,
+    transparent 100%
+  );
 }
 .creator-bg-scrim {
   position: absolute;
@@ -599,43 +681,72 @@ button.btn-primary:focus-visible {
   );
 }
 @media (max-width: 700px) {
+  .section--creator {
+    min-height: min(100vh, 52rem);
+  }
   .creator-bg {
     -webkit-mask-image: linear-gradient(
       to bottom,
       transparent 0%,
-      #000 18%,
-      #000 82%,
+      #000 8%,
+      #000 92%,
       transparent 100%
     );
     mask-image: linear-gradient(
       to bottom,
       transparent 0%,
-      #000 18%,
-      #000 82%,
+      #000 8%,
+      #000 92%,
       transparent 100%
     );
   }
   .creator-bg-collage {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    inset: -2% 0;
-    opacity: 0.82;
+    inset: -6% 0;
   }
   .creator-bg-img {
-    min-height: 200px;
+    min-height: 280px;
   }
-  .creator-bg-img--left,
+  .creator-bg-img--left {
+    transform: scale(1.06);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 55%,
+      rgba(0, 0, 0, 0.4) 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 55%,
+      rgba(0, 0, 0, 0.4) 82%,
+      transparent 100%
+    );
+  }
   .creator-bg-img--right {
-    transform: scale(1.04);
+    transform: scale(1.06);
+    -webkit-mask-image: linear-gradient(
+      to top,
+      #000 0%,
+      #000 55%,
+      rgba(0, 0, 0, 0.4) 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to top,
+      #000 0%,
+      #000 55%,
+      rgba(0, 0, 0, 0.4) 82%,
+      transparent 100%
+    );
   }
 }
 .creator-wrap {
   position: relative;
   z-index: 1;
-}
-.section--creator h2 {
-  margin-bottom: clamp(22px, 3vw, 32px);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+  width: 100%;
 }
 .creator-prose {
   max-width: 38rem;
@@ -871,4 +982,567 @@ body.legal-doc {
 .legal-doc-footer.site-footer {
   flex-shrink: 0;
   margin-top: 0;
+}
+
+/* Vardar Studio — company homepage (dark) */
+body.studio-home {
+  --studio-bg: #1e1c19;
+  --studio-bg-deep: #141210;
+  --studio-text: #ebe8e3;
+  --studio-text-sub: #a39e96;
+  --studio-text-muted: #6f6a63;
+  --studio-gold-line: rgba(214, 176, 102, 0.28);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--studio-text);
+  background: linear-gradient(
+    168deg,
+    var(--studio-bg) 0%,
+    #1a1816 45%,
+    var(--studio-bg-deep) 100%
+  );
+}
+body.studio-home::before {
+  display: none;
+}
+/* Draw canvas + custom cursor (Vardar Studio + Art Block) */
+.studio-draw-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  pointer-events: none;
+  touch-action: none;
+}
+body.studio-home.studio-drawing,
+body.artblock.studio-drawing {
+  cursor: none;
+  user-select: none;
+}
+body.studio-home,
+body.artblock {
+  position: relative;
+  cursor: none;
+}
+body.studio-home a,
+body.studio-home button,
+body.artblock a,
+body.artblock button {
+  cursor: none;
+}
+body.artblock .legal-doc-header,
+body.artblock main,
+body.artblock .site-footer,
+body.home.artblock .legal-doc-header,
+body.home.artblock main,
+body.home.artblock .site-footer {
+  position: relative;
+  z-index: 1;
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  body.studio-home,
+  body.studio-home a,
+  body.studio-home button,
+  body.artblock,
+  body.artblock a,
+  body.artblock button {
+    cursor: auto;
+  }
+}
+body.studio-home main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  /* Extra top padding shifts the block down toward true viewport center (footer balances below) */
+  padding: clamp(3.5rem, 13vh, 7.5rem) 0 clamp(1rem, 3vh, 2rem);
+  position: relative;
+  z-index: 1;
+}
+body.studio-home > footer {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.studio-hero {
+  text-align: center;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 clamp(1.25rem, 3.5vh, 2rem);
+}
+.studio-hero-inner {
+  will-change: transform;
+}
+.studio-projects {
+  flex: 0 0 auto;
+  padding: 0 0 clamp(1rem, 3vh, 2rem);
+}
+.studio-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.02em;
+  margin: 0;
+  line-height: 1;
+  color: var(--studio-text);
+}
+.studio-title-vardar {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  font-size: clamp(2.35rem, 7.5vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--studio-text);
+  opacity: 0;
+  transform: translateY(0.35em);
+  filter: blur(5px);
+}
+body.studio-hero-ready .studio-title-vardar {
+  animation: studio-vardar-in 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+body.studio-hero-instant .studio-title-vardar {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+@keyframes studio-vardar-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.studio-title-studio {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(2rem, 6.5vw, 3.15rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--studio-text-sub);
+  text-shadow: 0 0 48px rgba(214, 176, 102, 0.18);
+  opacity: 0;
+  transform: translateY(-1.35rem);
+  filter: blur(4px);
+}
+body.studio-hero-ready .studio-title-studio {
+  animation: studio-studio-drop 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 90ms;
+}
+body.studio-hero-instant .studio-title-studio {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+@keyframes studio-studio-drop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+/* Staged open — shared hidden state */
+.studio-open-item {
+  opacity: 0;
+}
+/* Projects + logo: soft fade only */
+.studio-open-fade {
+  transform: none;
+  filter: none;
+}
+body.studio-page-ready .studio-open-fade {
+  opacity: 1;
+  transition: opacity 0.7s ease;
+  transition-delay: var(--open-delay, 0ms);
+}
+/* Footer: subtle rise + fade */
+.studio-open-slide {
+  transform: translateY(1rem);
+  filter: blur(4px);
+}
+body.studio-page-ready .studio-open-slide {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--open-delay, 0ms);
+}
+body.studio-hero-instant .studio-open-item {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
+}
+.studio-projects-heading {
+  font-family: Palatino, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  margin: 0 0 clamp(0.75rem, 2vw, 1rem);
+  color: #5e5953;
+  letter-spacing: 0.05em;
+}
+@keyframes project-float-hover {
+  0%,
+  100% {
+    transform: translateY(-4px) rotate(-2.5deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2.5deg);
+  }
+}
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.project-link {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+}
+.project-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 120%;
+  height: 90%;
+  transform: translate(-50%, -50%) scale(0.85);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(214, 176, 102, 0.55) 0%,
+    rgba(214, 176, 102, 0.2) 42%,
+    transparent 72%
+  );
+  opacity: 0;
+  filter: blur(18px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.project-link:hover {
+  text-decoration: none;
+}
+.project-link:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.project-link:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 10px;
+  border-radius: 4px;
+}
+.project-link-logotype {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: clamp(2.5rem, 8vw, 4rem);
+  max-width: min(320px, 78vw);
+  margin: 0 auto;
+  object-fit: contain;
+  transition: filter 0.4s ease;
+}
+.project-link:hover .project-link-logotype {
+  animation: project-float-hover 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 8px 20px rgba(214, 176, 102, 0.35));
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-link::before,
+  .project-link-logotype {
+    transition: none;
+  }
+  .project-link:hover .project-link-logotype {
+    animation: none;
+    filter: drop-shadow(0 8px 20px rgba(214, 176, 102, 0.35));
+  }
+  .project-link:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.site-footer--studio {
+  margin-top: auto;
+  padding: 32px 0 40px;
+  border-top-color: rgba(110, 106, 100, 0.35);
+}
+body.studio-home .site-footer--studio .copyright {
+  color: var(--studio-text-muted);
+}
+
+/* Cursor: ink dot (white on dark studio home) */
+.studio-cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: #1a1c1e;
+  box-shadow: 0 0 8px rgba(26, 28, 30, 0.22);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  will-change: transform;
+}
+body.studio-home .studio-cursor-dot {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+}
+body.studio-cursor-active.studio-cursor-on .studio-cursor-dot {
+  opacity: 1;
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .studio-cursor-dot {
+    display: none;
+  }
+  body.studio-home .studio-hero-inner {
+    transform: none !important;
+  }
+  .studio-title-vardar,
+  .studio-title-studio,
+  .studio-open-item {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Studio → Art Block page transition */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #f2f2f7;
+  opacity: 0;
+  pointer-events: all;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-transition-overlay.is-active {
+  opacity: 1;
+}
+html.page-from-studio body.home {
+  opacity: 0;
+}
+html.page-from-studio.page-from-studio-ready body.home {
+  opacity: 1;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay {
+    transition: none;
+  }
+  html.page-from-studio body.home,
+  html.page-from-studio.page-from-studio-ready body.home {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* Art Block pages — Atelier palette + Inter / Lora (ArtBlockTheme.swift) */
+body.artblock {
+  --bg: #e8e6dd;
+  --bg-light: #ffffff;
+  --bg-panel: #f5f5f3;
+  --bg-deep: #eaeae8;
+  --engraved: #9aa0a8;
+  --raised: #f5f5f3;
+  --text-primary: #1a1c1e;
+  --text-sub: #4a5058;
+  --text-muted: #9aa0a8;
+  --accent: #6b4e38;
+  --accent-hover: #8b4a2a;
+  --accent-gold: #e8c070;
+  --accent-gold-soft: rgba(232, 192, 112, 0.2);
+  --accent-gold-line: rgba(232, 192, 112, 0.42);
+  --shadow-emboss: 1px 1px 0 rgba(255, 255, 255, 0.7),
+    -1px -1px 0 rgba(26, 28, 30, 0.05), 0 8px 24px rgba(26, 28, 30, 0.07);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  background: var(--bg);
+}
+body.artblock a {
+  color: var(--accent);
+}
+body.artblock a:hover,
+body.artblock a:focus {
+  color: var(--accent-hover);
+}
+body.artblock .hero-lead,
+body.artblock .section h2,
+body.artblock .feature-card h3,
+body.artblock .legal-doc-content h1,
+body.artblock .creator-prose .creator-signature {
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+}
+/* Type scale: Lora display + Inter UI (matches app tokens) */
+body.artblock .hero-lead {
+  font-size: clamp(1.125rem, 2.4vw, 1.1875rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-shadow: none;
+}
+body.artblock .hero .tagline {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 30rem;
+}
+body.artblock .section h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.375rem);
+  line-height: 1.25;
+  font-weight: 400;
+}
+body.artblock .section .lead {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  max-width: 34rem;
+}
+body.artblock .feature-card h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+body.artblock .feature-card p,
+body.artblock .creator-prose,
+body.artblock .creator-prose p {
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+body.artblock .creator-prose .creator-signature {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+body.artblock .legal-doc-content h1 {
+  font-size: clamp(1.3125rem, 2.8vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+body.artblock .legal-meta {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+body.artblock .legal-doc-prose {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+body.artblock .legal-doc-prose h2 {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+body.artblock .legal-doc-disclaimer {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+body.artblock .copyright,
+body.artblock .footer-links a {
+  font-size: 0.75rem;
+}
+body.artblock .studio-back-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+body.artblock .btn-primary,
+body.artblock button.btn-primary {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  background: var(--accent-gold);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-emboss);
+}
+body.artblock .btn-primary:hover,
+body.artblock .btn-primary:focus {
+  filter: brightness(0.97);
+  color: var(--text-primary);
+}
+body.artblock .feature-card {
+  background: var(--bg-panel);
+  border: 1px solid rgba(154, 160, 168, 0.22);
+  border-top: 2px solid var(--accent-gold);
+  box-shadow: 1px 1px 0 var(--raised), -1px -1px 0 rgba(26, 28, 30, 0.04),
+    0 6px 20px rgba(26, 28, 30, 0.06);
+}
+body.artblock .creator-bg-scrim {
+  background: linear-gradient(
+    160deg,
+    rgba(232, 230, 221, 0.68) 0%,
+    rgba(232, 230, 221, 0.48) 45%,
+    rgba(232, 230, 221, 0.62) 100%
+  );
+}
+body.artblock .creator-prose {
+  background: rgba(245, 245, 243, 0.82);
+  border-color: rgba(154, 160, 168, 0.2);
+}
+body.artblock .legal-doc-header {
+  background: var(--bg);
+  border-bottom-color: rgba(154, 160, 168, 0.28);
+}
+body.artblock .site-footer {
+  border-top-color: rgba(154, 160, 168, 0.28);
+}
+body.artblock .app-icon {
+  box-shadow: 0 4px 18px rgba(26, 28, 30, 0.1), 0 2px 12px var(--accent-gold-soft);
+}
+
+/* Art Block subpages — link back to studio */
+.legal-doc-header--artblock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+/* Art Block landing: studio back link only (hero has the main lockup) */
+body.home .legal-doc-header--artblock {
+  padding: 20px 24px 16px;
+  gap: 0;
+}
+.studio-back-link {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.studio-back-link:hover,
+.studio-back-link:focus {
+  color: var(--accent-gold);
+  text-decoration: none;
 }
