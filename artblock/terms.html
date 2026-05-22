@@ -28,20 +28,20 @@
       <article class="legal-doc-content">
         <h1>Terms of Use</h1>
         <p class="legal-meta">
-          Last updated: <strong>May 10, 2026</strong>
+          Last updated: <strong>May 18, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
           <p>
             These Terms of Use (“Terms”) govern your access to and use of the
             Art Block mobile application and related services (the
-            “<strong>Service</strong>”) offered by the independent operator who
-            publishes Art Block, based in <strong>Quebec, Canada</strong>
-            (“we”, “us”, “our”). That operator does business under the name
-            <strong>Art Block</strong> and is identified as the app’s developer
-            / seller on the Apple App Store. The Service is software for
-            scheduling, tracking, reflecting on, and (optionally) sharing
-            creative practice.
+            “<strong>Service</strong>”) offered by
+            <strong>Vardar Studio Inc.</strong>, based in
+            <strong>Quebec, Canada</strong> (“we”, “us”, “our”). We publish
+            Art Block under the <strong>Art Block</strong> name and are
+            identified as the app’s developer / seller on the Apple App Store.
+            The Service is software for scheduling, tracking, reflecting on,
+            and (optionally) sharing creative practice.
           </p>
           <p>
             By downloading, accessing, or using the Service, you agree to these
@@ -51,11 +51,15 @@
           </p>
           <p>
             The Service is local-first: practice content is stored on your
-            device, with cloud backup keeping a copy on our servers so you can
-            move between devices. The optional social features (profile,
-            follow / followers, shared sessions feed, likes and comments,
-            groups, in-app notifications, blocks, mutes, and reports) only
-            become active when you turn them on.
+            device, with cloud backup keeping a structured copy on our servers
+            when you are signed in so you can move between devices. Session
+            diary photos stay primarily on your device; photos you attach as
+            <strong>shared session covers</strong> are stored on our file
+            hosting when you publish to social. Optional social features
+            (profile, follow / followers, shared sessions feed, likes and
+            comments, groups, in-app notifications, blocks, mutes, and reports)
+            are <strong>off by default</strong> and only become active when you
+            complete social activation in the app.
           </p>
 
           <h2>Eligibility</h2>
@@ -71,36 +75,39 @@
 
           <h2>Accounts</h2>
           <p>
-            When you first use a feature that requires the backend (cloud
-            backup of practice content or any social feature), the app
-            <strong>automatically creates an account</strong> tied to a
-            randomly generated identifier. You don’t have to set a username or
-            password to start using the Service. We may later add optional
-            <strong>“Sign in with Apple”</strong> or <strong>“Sign in with
-            Google”</strong> so you can recover your account on a new device.
+            You must <strong>sign in</strong> to use the Service. You may use
+            <strong>Sign in with Apple</strong> or
+            <strong>email and password</strong> (hosted authentication via
+            Supabase). Email sign-up may require <strong>email confirmation</strong>
+            before you can sign in. We may add <strong>Sign in with Google</strong>
+            later; we will update these Terms before that ships.
           </p>
           <p>
             You are responsible for activity under your account, except where
             it results from our error or a compromise we should reasonably
             have prevented. If you suspect unauthorized use, contact us
-            promptly through the channel described at the end of these Terms.
+            promptly through the channels described at the end of these Terms.
           </p>
           <p>
-            Paid features are tied to your platform subscription (for example
-            your Apple ID and App Store subscription), independent of your
-            Art Block account.
+            Signing out clears local practice data on your device; your cloud
+            backup remains on our servers until you delete content or request
+            account deletion. Paid features are tied to your platform
+            subscription (for example your Apple ID and App Store
+            subscription), independent of your Art Block sign-in account.
           </p>
 
           <h2>Subscriptions and payments</h2>
           <p>
-            If you purchase a paid subscription or other paid offering, payment
+            Art Block offers a free tier and optional <strong>Art Block Pro</strong>
+            subscription. If you purchase Pro or other paid offerings, payment
             is processed by the platform where you obtained the Service (for
             example, <strong>Apple</strong> through the App Store). Prices,
             billing cycle, renewal, and cancellation are controlled by that
-            platform’s rules and your account settings. We do not receive your
-            full payment card number. To the extent permitted by law,
-            <strong>fees may be non-refundable</strong> except as required by
-            the platform or applicable consumer law.
+            platform’s rules and your account settings. We use
+            <strong>RevenueCat</strong> to validate purchases and entitlements;
+            we do not receive your full payment card number. To the extent
+            permitted by law, <strong>fees may be non-refundable</strong>
+            except as required by the platform or applicable consumer law.
           </p>
 
           <h2>The Service</h2>
@@ -114,10 +121,13 @@
           <p>
             We may change, suspend, or discontinue features, temporarily or
             permanently. We do not guarantee uninterrupted or error-free
-            operation. The Service is <strong>not</strong> medical,
-            therapeutic, or professional coaching or instruction, and is
-            <strong>not</strong> a substitute for employment, school, or legal
-            advice.
+            operation. Optional <strong>focus shielding</strong> uses Apple’s
+            Family Controls / Screen Time APIs on your device to block apps you
+            select during a practice session; see our
+            <a href="privacy.html">Privacy Policy</a> for how that works.
+            The Service is <strong>not</strong> medical, therapeutic, or
+            professional coaching or instruction, and is <strong>not</strong>
+            a substitute for employment, school, or legal advice.
           </p>
 
           <h2>Your content</h2>
@@ -155,26 +165,28 @@
 
           <h2>Social features and audience controls</h2>
           <p>
-            When you enable social features and publish a session, you choose
-            who sees it. The visibility levels are:
+            Social features are <strong>off by default</strong>. When you
+            activate social and mark a session as <strong>shared</strong> (as
+            opposed to private in your diary), audience rules apply:
           </p>
           <ul>
             <li>
-              <strong>Private</strong> — only you see the session on your
-              profile.
+              <strong>Private (not shared)</strong> — the session is not
+              published to your social feed.
             </li>
             <li>
-              <strong>Followers</strong> — accounts that follow you can see
-              the session.
+              <strong>Shared with a private profile</strong> — generally
+              visible to accounts that follow you, subject to follow-approval
+              settings.
             </li>
             <li>
-              <strong>Public</strong> — any signed-in Art Block user who can
-              find your profile can see the session, subject to your
-              discoverability and follow-approval settings.
+              <strong>Shared with a public profile</strong> — may be visible
+              to signed-in users who can find you, subject to discoverability
+              settings.
             </li>
             <li>
-              <strong>Group</strong> — only active members of the group you
-              tagged can see the session.
+              <strong>Group</strong> — when you tag a session to a group,
+              active members of that group may see it according to group rules.
             </li>
           </ul>
           <p>
@@ -415,22 +427,26 @@
 
           <h2>Contact</h2>
           <p>
-            Questions about these Terms or requests for account deletion:
+            Questions about these Terms, support, or requests for
+            <strong>account deletion</strong>:
           </p>
           <ul>
             <li>
-              Use the developer contact or support channel shown on the
-              <strong>Apple App Store</strong> listing for Art Block.
+              <strong>Vardar Studio Inc.</strong> —
+              <a href="https://vardarstudio.com">vardarstudio.com</a>
             </li>
             <li>
-              If we publish a dedicated email address for legal or support
-              requests, we will add it here.
+              Email:
+              <a href="mailto:contact@vardarstudio.com">contact@vardarstudio.com</a>
+            </li>
+            <li>
+              You may also use the developer contact channel shown on the
+              <strong>Apple App Store</strong> listing for Art Block.
             </li>
           </ul>
           <p class="legal-meta">
-            <strong>Legal name of operator (sole proprietorship, Quebec):</strong>
-            Erkal Efe Vardar — matches the developer listing for Art Block on the
-            App Store.
+            <strong>Operator:</strong> Vardar Studio Inc. (Quebec, Canada),
+            developer of Art Block on the Apple App Store.
           </p>
         </div>
       </article>

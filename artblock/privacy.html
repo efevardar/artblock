@@ -28,7 +28,7 @@
       <article class="legal-doc-content">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">
-          Last updated: <strong>May 10, 2026</strong>
+          Last updated: <strong>May 18, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
@@ -45,18 +45,18 @@
           <p>
             <strong>Art Block</strong> is a mobile app for scheduling, logging,
             and (optionally) sharing creative practice. It is developed and
-            published by an independent operator based in
+            published by <strong>Vardar Studio Inc.</strong>, based in
             <strong>Quebec, Canada</strong>, using the
-            <strong>Art Block</strong> name in the App Store and related
+            <strong>Art Block</strong> name on the App Store and related
             materials.
           </p>
           <p>
             For privacy law (including who is responsible for decisions about
             your personal information), the <strong>data controller</strong> is
-            the same person or business identified as the app’s developer /
-            seller on the <strong>Apple App Store</strong> listing for Art Block.
-            You can reach that party through the contact options Apple provides
-            there, or as described under <strong>Contact</strong> below.
+            <strong>Vardar Studio Inc.</strong>, identified as the app’s
+            developer / seller on the <strong>Apple App Store</strong> listing
+            for Art Block. You can reach us as described under
+            <strong>Contact</strong> below.
           </p>
 
           <h2>Backend providers we use</h2>
@@ -98,54 +98,92 @@
           <h2>Information we collect</h2>
           <p>
             Art Block is <strong>local-first</strong>: your practice journal
-            lives on your device, with cloud backup keeping a copy on our
-            backend so you can move between devices. The optional social
-            features additionally let you share parts of your practice with
-            other people you choose to follow.
+            lives on your device. When you are signed in, cloud backup keeps a
+            structured copy on our backend so you can move between devices.
+            Optional social features let you share parts of your practice with
+            other people you choose to follow, after you activate social in
+            the app.
           </p>
 
-          <h3>1. Account identifier</h3>
+          <h3>1. Account and sign-in</h3>
           <p>
-            When you first use a feature that requires the backend (cloud
-            backup or anything social), the app
-            <strong>automatically creates an account</strong> on Supabase tied
-            to a randomly generated identifier. You don’t have to type a
-            username or password — the credentials are generated and stored
-            securely on your device. We may later introduce
-            <strong>optional “Sign in with Apple” or “Sign in with Google”</strong>
-            so you can recover your account on a new device. We will update
-            this policy before that ships.
+            To use the Service, you must <strong>sign in</strong> and create an
+            account on our backend
+            (hosted by <strong>Supabase</strong>). You can sign in with
+            <strong>Sign in with Apple</strong> or with <strong>email and
+            password</strong>. We store your account identifier, session
+            tokens, and (for email sign-in) your email address as needed to
+            authenticate you. If you use Sign in with Apple, Apple may share
+            your name or email with us according to the choices you make in
+            Apple’s sign-in sheet.
+          </p>
+          <p>
+            New email accounts may need to <strong>confirm their email
+            address</strong> before sign-in completes, depending on how our
+            authentication service is configured. We may add optional
+            <strong>Sign in with Google</strong> later; we will update this
+            policy before that ships.
+          </p>
+          <p>
+            Sign-in credentials and tokens are stored on your device. Signing
+            out clears local practice data on the device; your cloud backup
+            remains tied to your account until you delete it or request
+            account deletion.
           </p>
 
-          <h3>2. Practice content (cloud backup)</h3>
+          <h3>2. Practice content (cloud backup and on-device photos)</h3>
           <p>
-            With cloud backup enabled, the app uploads a copy of your local
-            practice content — your scheduled practices, session logs, focused
-            minutes, notes, mediums and pursuits — to your private row on
-            Supabase. Only you (the signed-in account) can read this row.
-            We do not analyse the contents of your practice journal.
+            Art Block is <strong>local-first</strong>: your practice journal
+            is stored on your device. When you are signed in, the app also
+            uploads a <strong>structured copy</strong> of your practice content
+            to your private row on Supabase — scheduled practices, session
+            logs, focused minutes, notes, mediums, pursuits, and a small
+            embedded copy of your <strong>profile avatar</strong> for backup
+            restore. Only you (the signed-in account) can read this backup row
+            under normal operation. We do not analyse the contents of your
+            practice journal for advertising.
+          </p>
+          <p>
+            <strong>Session diary photos</strong> (images you attach to a logged
+            session) are kept primarily <strong>on your device</strong>. They
+            are not fully embedded in the cloud backup payload. If you
+            <strong>share</strong> a session to social and attach a cover photo,
+            that cover is uploaded separately to <strong>Supabase Storage</strong>
+            as described below.
           </p>
 
-          <h3>3. Social profile (only if you turn social on)</h3>
+          <h3>3. Social profile (only after you activate social)</h3>
           <p>
-            Turning social on stores a public-style profile keyed to your
-            account: <strong>username, bio, profile avatar, discoverability
-            preference, and whether you require manual approval for follow
-            requests</strong>. Other Art Block users may see this profile if
-            you make yourself discoverable, or if they look you up by username.
+            <strong>Social is off by default</strong> for new accounts. Until
+            you complete activation in the Social tab, other users cannot
+            discover you and your sessions are not published to the feed.
+          </p>
+          <p>
+            When you turn social on, we store a profile keyed to your account:
+            <strong>username, bio, profile avatar, discoverability preference,
+            whether you require manual approval for follow requests, and
+            whether your profile is public or private</strong> (which affects
+            the default audience for sessions you mark as shared). Other Art
+            Block users may see this profile if you make yourself
+            discoverable, or if they look you up by username.
           </p>
 
           <h3>4. Shared sessions, likes, and comments</h3>
           <p>
-            When you share a practice session — manually or via the
+            When you share a practice session — manually or via the optional
             <em>auto-share</em> setting — a copy of that session
             (<strong>title, category, mediums summary, focused minutes, log
             time, your note, and the cover photo you attached, if any</strong>)
-            is published to your Art Block feed at the visibility you chose
-            (private, followers, public, or to a specific group). Cover images
-            are uploaded to <strong>Supabase Storage</strong> and served
-            through short-lived signed URLs. Other users’ likes, comments, and
-            timestamps are stored against that session row.
+            is stored on our servers. In the app you choose whether a session is
+            <strong>private or shared</strong> on social; your
+            <strong>public vs private profile</strong> setting determines
+            whether shared sessions are visible to <em>followers</em> or
+            <em>all signed-in users</em> who can find you. You may also tag a
+            session to a <strong>group</strong>, limiting visibility to that
+            group’s members. Cover images are uploaded to
+            <strong>Supabase Storage</strong> and served through short-lived
+            signed URLs. Other users’ likes, comments, and timestamps are
+            stored against that session row.
           </p>
 
           <h3>5. Followers, following, and groups</h3>
@@ -191,7 +229,7 @@
               we store the reporter’s account identifier, the reported user’s
               account identifier, the reported session id (if any), the
               category you chose, and any short text you added.
-              <strong>The Art Block operator can review reports for moderation
+              <strong>Vardar Studio Inc. can review reports for moderation
               purposes.</strong> Reports are not visible to other users.
             </li>
           </ul>
@@ -207,22 +245,36 @@
             per-user thresholds.
           </p>
 
-          <h3>9. Photos and images you choose</h3>
+          <h3>9. Photos, camera, and images you choose</h3>
           <p>
-            If you attach a cover photo to a session, set a profile avatar, or
-            add a group banner, the app accesses your photo library
-            <strong>only when you select an item</strong>. We re-encode the
-            chosen image to a small JPEG before uploading. Avatar bytes are
-            stored on the corresponding profile / group row; session covers
-            are stored as files in Supabase Storage.
+            If you attach a photo to a session log, set a session cover when
+            sharing, set a profile avatar, or add a group banner, the app may
+            access your <strong>photo library</strong> or <strong>camera</strong>
+            <strong>only when you choose</strong> to pick or take an image. We
+            re-encode the chosen image to a small JPEG before uploading where
+            applicable. Avatar bytes may be stored on the corresponding profile
+            / group row and in your cloud backup snapshot; session covers are
+            stored as files in Supabase Storage.
           </p>
           <p>
             Art Block <strong>does not</strong> read your contacts, calendar,
-            location, microphone, or device identifiers for advertising. The
-            “Find friends” screen is a username search only.
+            location, or microphone for advertising. The “Find friends” screen
+            is a username search only.
           </p>
 
-          <h3>10. Payment-related information</h3>
+          <h3>10. Optional focus shield (Screen Time / Family Controls)</h3>
+          <p>
+            If you enable <strong>focus shielding</strong> during onboarding or
+            in the timer, the app uses Apple’s <strong>Family Controls</strong>
+            / Screen Time APIs to help block distracting apps while you practice.
+            This feature is <strong>optional</strong>. The apps or categories you
+            select are processed on your device through Apple’s frameworks; we
+            do not upload your app-selection list to our servers for advertising.
+            You can change or disable this permission in iOS Settings at any
+            time.
+          </p>
+
+          <h3>11. Payment-related information</h3>
           <p>
             Paid features are purchased through Apple’s App Store. We do not
             receive your full payment card details. RevenueCat receives the
@@ -230,7 +282,7 @@
             entitlements.
           </p>
 
-          <h3>11. Device and technical data</h3>
+          <h3>12. Device and technical data</h3>
           <p>
             Such as device type, operating system, app version, and crash /
             diagnostic information allowed by your device settings. If we add
@@ -267,15 +319,18 @@
           </p>
           <ul>
             <li>
-              <strong>Private</strong> — only you see it on your profile.
+              <strong>Private (not shared)</strong> — the session is not on your
+              social feed; only you see it in your diary.
             </li>
             <li>
-              <strong>Followers</strong> — visible to accounts that follow you.
+              <strong>Shared — followers audience</strong> — when your profile
+              is private, shared sessions are visible to accounts that follow
+              you (subject to follow-approval settings).
             </li>
             <li>
-              <strong>Public</strong> — visible to any signed-in Art Block user
-              who can find you (subject to discoverability and follow-approval
-              settings).
+              <strong>Shared — public audience</strong> — when your profile is
+              public, shared sessions may be visible to signed-in users who can
+              find you (subject to discoverability settings).
             </li>
             <li>
               <strong>Group</strong> — visible only to active members of the
@@ -359,7 +414,8 @@
           <h2>Your choices and rights</h2>
           <ul>
             <li>
-              You can <strong>turn social off</strong> at any time in Settings.
+              <strong>Social is off by default.</strong> You can
+              <strong>turn social off</strong> again at any time in Settings.
               When social is off you are not discoverable, your profile is not
               shown to other users, and auto-share is disabled.
             </li>
@@ -435,24 +491,26 @@
 
           <h2>Contact</h2>
           <p>
-            Questions about this policy or requests regarding your personal
-            information:
+            Questions about this policy, support, or requests regarding your
+            personal information (including <strong>account deletion</strong>):
           </p>
           <ul>
             <li>
-              Use the developer contact or support channel shown on the
-              <strong>Apple App Store</strong> listing for Art Block.
+              <strong>Vardar Studio Inc.</strong> —
+              <a href="https://vardarstudio.com">vardarstudio.com</a>
             </li>
             <li>
-              If we publish a dedicated email address for privacy or account
-              deletion requests, we will add it here so you can reach us
-              directly.
+              Email:
+              <a href="mailto:contact@vardarstudio.com">contact@vardarstudio.com</a>
+            </li>
+            <li>
+              You may also use the developer contact channel shown on the
+              <strong>Apple App Store</strong> listing for Art Block.
             </li>
           </ul>
           <p class="legal-meta">
-            <strong>Legal name of operator (sole proprietorship, Quebec):</strong>
-            Erkal Efe Vardar — matches the developer listing for Art Block on the
-            App Store.
+            <strong>Data controller:</strong> Vardar Studio Inc. (Quebec, Canada),
+            developer of Art Block on the Apple App Store.
           </p>
 
           <p>
