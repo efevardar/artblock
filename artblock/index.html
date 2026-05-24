@@ -99,21 +99,28 @@
                 consistent growth.
               </p>
               <div class="cta-row">
-                <a
-                  class="btn-primary btn-primary--soon"
-                  href="#"
-                  aria-label="Download on iOS (coming soon)"
-                  >Download on iOS</a
-                >
                 <button
                   type="button"
-                  class="btn-primary btn-primary--soon btn-primary--android-soon"
+                  class="btn-primary btn-primary--soon btn-primary--hover-soon"
+                  aria-label="Download on iOS, coming soon"
+                  title="Coming soon"
+                >
+                  <span class="btn-soon-face">
+                    <span class="btn-soon-default">Download on iOS</span>
+                    <span class="btn-soon-hover" aria-hidden="true"
+                      >Coming soon</span
+                    >
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="btn-primary btn-primary--soon btn-primary--hover-soon"
                   aria-label="Download on Android, coming soon"
                   title="Coming soon"
                 >
-                  <span class="btn-android-face">
-                    <span class="btn-android-default">Download on Android</span>
-                    <span class="btn-android-hover" aria-hidden="true"
+                  <span class="btn-soon-face">
+                    <span class="btn-soon-default">Download on Android</span>
+                    <span class="btn-soon-hover" aria-hidden="true"
                       >Coming soon</span
                     >
                   </span>
@@ -125,7 +132,7 @@
                 class="phone-mockup"
                 data-phone-mockup
                 aria-roledescription="carousel"
-                aria-label="Art Block app screenshots. Swipe or use dots to move between slides."
+                aria-label="Art Block app screenshots. Swipe or use the arrows and dots to move between slides."
               >
                 <div class="phone-mockup-body">
                   <div class="phone-mockup-screen">
@@ -236,7 +243,25 @@
                     loading="lazy"
                   />
                 </div>
-                <div class="phone-carousel-dots" role="tablist" aria-label="Screenshot">
+                <div class="phone-carousel-controls">
+                  <button
+                    type="button"
+                    class="phone-carousel-arrow phone-carousel-arrow--prev"
+                    aria-label="Previous screenshot"
+                    disabled
+                  >
+                    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                      <path
+                        d="M11.25 3.75 6 9l5.25 5.25"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="phone-carousel-dots" role="tablist" aria-label="Screenshot">
                   <button
                     type="button"
                     class="phone-carousel-dot is-active"
@@ -318,6 +343,23 @@
                     data-slide="8"
                     aria-label="Show screenshot 9 of 9"
                   ></button>
+                  </div>
+                  <button
+                    type="button"
+                    class="phone-carousel-arrow phone-carousel-arrow--next"
+                    aria-label="Next screenshot"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                      <path
+                        d="m6.75 3.75 5.25 5.25L6.75 14.25"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -452,6 +494,8 @@
         if (!track) return;
         var root = track.closest("[data-phone-mockup]");
         var dots = root ? root.querySelectorAll(".phone-carousel-dot") : [];
+        var prevBtn = root ? root.querySelector(".phone-carousel-arrow--prev") : null;
+        var nextBtn = root ? root.querySelector(".phone-carousel-arrow--next") : null;
 
         function setActive(i) {
           var n = Math.max(0, Math.min(i, dots.length - 1));
@@ -460,6 +504,8 @@
             dot.classList.toggle("is-active", on);
             dot.setAttribute("aria-selected", on ? "true" : "false");
           });
+          if (prevBtn) prevBtn.disabled = n === 0;
+          if (nextBtn) nextBtn.disabled = n === dots.length - 1;
         }
 
         function goToSlide(index) {
@@ -474,6 +520,23 @@
             goToSlide(Number(dot.getAttribute("data-slide") || 0));
           });
         });
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", function () {
+            var w = track.clientWidth;
+            if (!w) return;
+            goToSlide(Math.round(track.scrollLeft / w) - 1);
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener("click", function () {
+            var w = track.clientWidth;
+            if (!w) return;
+            goToSlide(Math.round(track.scrollLeft / w) + 1);
+          });
+        }
+
+        setActive(0);
 
         var scrollEndTimer;
         track.addEventListener(

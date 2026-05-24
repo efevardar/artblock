@@ -111,13 +111,8 @@
           function go() {
             if (navigated) return;
             navigated = true;
-            overlay.remove();
             window.location.href = href;
           }
-
-          window.addEventListener("pagehide", function () {
-            overlay.remove();
-          });
 
           overlay.addEventListener("transitionend", go, { once: true });
           window.setTimeout(go, 550);

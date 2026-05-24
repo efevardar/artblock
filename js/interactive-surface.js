@@ -234,6 +234,6 @@
     document.addEventListener("touchcancel", endDraw);
   }
 
-  if (drawEnabled) initDrawCanvas();
+  if (drawEnabled && !coarsePointer) initDrawCanvas();
   initCursorLoop();
 })();

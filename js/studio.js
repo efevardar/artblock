@@ -67,7 +67,6 @@
 
   initOpeningSequence();
 
-  window.addEventListener("pagehide", removeTransitionOverlay);
   window.addEventListener("pageshow", function (e) {
     if (!e.persisted) return;
     restoreFromCache();
