@@ -384,19 +384,24 @@ button.btn-primary:focus-visible {
 }
 
 .btn-soon-face {
-  display: inline-grid;
-  place-items: center;
+  display: inline-block;
+  position: relative;
   line-height: 1.2;
 }
 
 .btn-soon-default,
 .btn-soon-hover {
-  grid-area: 1 / 1;
   transition: opacity 0.16s ease;
 }
 
 .btn-soon-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
+  pointer-events: none;
 }
 
 .btn-primary--hover-soon:hover .btn-soon-default,
@@ -503,11 +508,14 @@ button.btn-primary:focus-visible {
 .phone-carousel-controls {
   flex: 0 0 auto;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: clamp(10px, 2.5vw, 16px);
   padding: 12px 0 0;
   margin-top: 4px;
+  width: 100%;
 }
 .phone-carousel-dots {
   flex: 0 1 auto;
@@ -528,11 +536,15 @@ button.btn-primary:focus-visible {
   width: 32px;
   height: 32px;
   padding: 0;
+  margin: 0;
   border: none;
   border-radius: 50%;
   background: transparent;
   color: rgba(26, 28, 30, 0.58);
   cursor: pointer;
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
   transition: color 0.15s ease, background 0.15s ease, opacity 0.15s ease;
 }
 .phone-carousel-arrow:hover:not(:disabled) {
