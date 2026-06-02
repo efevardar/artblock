@@ -8,7 +8,21 @@
       name="description"
       content="Vardar Studio — independent apps and creative tools. Explore our projects including Art Block."
     />
-    <link rel="stylesheet" href="/css/main.css?v=3" />
+    <link rel="canonical" href="https://www.vardarstudio.com/" />
+    <link rel="stylesheet" href="css/main.css?v=3" />
+    <script>
+      (function () {
+        if (/\/index\.html$/i.test(location.pathname)) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.replace(/\/index\.html$/i, "/") +
+              location.search +
+              location.hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body class="studio-home">
     <canvas
@@ -39,7 +53,7 @@
           </h2>
           <ul class="project-list">
             <li class="studio-open-item studio-open-fade" data-open-id="project-card">
-              <a href="/artblock/" class="project-link">
+              <a href="artblock/" class="project-link">
                 <img
                   src="images/LogoType_dark.png"
                   alt="Art Block"
@@ -65,8 +79,8 @@
         </p>
       </div>
     </footer>
-    <script src="/js/interactive-surface.js?v=3" defer></script>
-    <script src="/js/studio.js?v=3" defer></script>
+    <script src="js/interactive-surface.js?v=3" defer></script>
+    <script src="js/studio.js?v=3" defer></script>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 

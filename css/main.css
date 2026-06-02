@@ -1840,3 +1840,52 @@ body.home .legal-doc-header--artblock {
   color: var(--accent-gold);
   text-decoration: none;
 }
+
+/* Supabase email verification landing pages */
+.artblock-scenery--minimal .artblock-scenery__prop,
+.artblock-scenery--minimal .artblock-scenery__mess {
+  display: none;
+}
+body.auth-status .legal-doc-footer.site-footer {
+  margin-top: 0;
+  padding: 32px 0 40px;
+}
+.auth-status-main {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 10vh, 5rem) 24px;
+}
+.auth-status-card {
+  width: min(100%, 28rem);
+  margin: 0 auto;
+  text-align: center;
+}
+.auth-status-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  border-radius: 22%;
+  object-fit: cover;
+  filter: var(--artblock-lit-shadow-icon);
+}
+.auth-status-card h1 {
+  margin: 0 0 14px;
+  font-family: "Lora", Palatino, "Palatino Linotype", "Book Antiqua", Georgia,
+    serif;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+.auth-status-lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-sub);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email verified — Art Block</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="canonical" href="https://www.vardarstudio.com/artblock/email-verified/" />
+    <link rel="stylesheet" href="../../css/main.css?v=3" />
+    <script>
+      (function () {
+        if (/\/index\.html$/i.test(location.pathname)) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.replace(/\/index\.html$/i, "/") +
+              location.search +
+              location.hash
+          );
+        }
+      })();
+    </script>
+  </head>
+  <body class="legal-doc artblock auth-status">
+    <div class="artblock-scenery artblock-scenery--minimal" aria-hidden="true">
+      <div class="artblock-scenery__tile"></div>
+    </div>
+    <main class="auth-status-main">
+      <article class="auth-status-card">
+        <img
+          class="auth-status-icon"
+          src="../../images/AppIcon.png"
+          alt="Art Block"
+          width="72"
+          height="72"
+          decoding="async"
+        />
+        <h1>Email verified</h1>
+        <p class="auth-status-lead">
+          Your email address has been confirmed. You can close this page and
+          return to the Art Block app to sign in.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer legal-doc-footer">
+      <div class="wrap">
+        <p class="copyright">
+          © <span id="year"></span> Art Block. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
