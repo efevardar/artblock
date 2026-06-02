@@ -8,7 +8,21 @@
       name="description"
       content="With Art Block, build healthy art habits and track your consistent growth. Log pursuits, sessions, and notes in one place."
     />
+    <link rel="canonical" href="https://www.vardarstudio.com/artblock/" />
     <link rel="stylesheet" href="/css/main.css?v=3" />
+    <script>
+      (function () {
+        if (/\/index\.html$/i.test(location.pathname)) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.replace(/\/index\.html$/i, "/") +
+              location.search +
+              location.hash
+          );
+        }
+      })();
+    </script>
     <script>
       (function () {
         if (sessionStorage.getItem("vardar-page-transition") !== "to-artblock") {
@@ -66,7 +80,7 @@
     ></canvas>
     <div class="studio-cursor-dot" aria-hidden="true"></div>
     <header class="legal-doc-header legal-doc-header--artblock">
-      <a href="/index.html" class="studio-back-link">Vardar Studio</a>
+      <a href="/" class="studio-back-link">Vardar Studio</a>
     </header>
     <main>
       <section class="hero">
@@ -469,7 +483,7 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <a href="index.html" class="footer-brand">
+        <a href="/artblock/" class="footer-brand">
           <img
             src="/images/Logotype.png"
             alt="Art Block"
@@ -480,8 +494,8 @@
           />
         </a>
         <nav class="footer-links" aria-label="Legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Use</a>
+          <a href="/artblock/privacy.html">Privacy Policy</a>
+          <a href="/artblock/terms.html">Terms of Use</a>
         </nav>
         <p class="copyright">© <span id="year"></span> Art Block. All rights reserved.</p>
       </div>
