@@ -1020,6 +1020,57 @@ body.legal-doc {
   margin-top: 0;
 }
 
+.legal-doc-prose h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 28px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.legal-doc-note {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 12px 0 0;
+  line-height: 1.55;
+}
+
+.legal-doc-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.legal-doc-table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.legal-doc-table th,
+.legal-doc-table td {
+  padding: 12px 14px;
+  vertical-align: top;
+  border: 1px solid rgba(154, 160, 168, 0.28);
+}
+
+.legal-doc-table thead th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  background: rgba(245, 245, 243, 0.9);
+}
+
+.legal-doc-table tbody td:first-child {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
 .legal-doc-disclaimer {
   margin-top: 40px;
   padding: 18px 20px;
