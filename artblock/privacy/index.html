@@ -57,7 +57,7 @@
       <article class="legal-doc-content">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">
-          Last updated: <strong>May 18, 2026</strong>
+          Last updated: <strong>July 30, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
@@ -76,16 +76,16 @@
             and (optionally) sharing creative practice. It is developed and
             published by <strong>Vardar Studio Inc.</strong>, based in
             <strong>Quebec, Canada</strong>, using the
-            <strong>Art Block</strong> name on the App Store and related
-            materials.
+            <strong>Art Block</strong> name on the Apple App Store, Google Play,
+            and related materials.
           </p>
           <p>
             For privacy law (including who is responsible for decisions about
             your personal information), the <strong>data controller</strong> is
             <strong>Vardar Studio Inc.</strong>, identified as the app’s
-            developer / seller on the <strong>Apple App Store</strong> listing
-            for Art Block. You can reach us as described under
-            <strong>Contact</strong> below.
+            developer / seller on the <strong>Apple App Store</strong> and
+            <strong>Google Play</strong> listings for Art Block. You can reach
+            us as described under <strong>Contact</strong> below.
           </p>
 
           <h2>Backend providers we use</h2>
@@ -96,14 +96,20 @@
           <ul>
             <li>
               <strong>Apple</strong> — App Store distribution, in-app purchases,
-              local notification delivery, and platform-level protections.
+              Sign in with Apple, APNs push delivery, local notification
+              delivery, and platform-level protections on iOS.
+            </li>
+            <li>
+              <strong>Google</strong> — Google Play distribution and in-app
+              purchases on Android, Sign in with Google where offered, and
+              Firebase Cloud Messaging for Android push delivery.
             </li>
             <li>
               <strong>RevenueCat</strong> —
               <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a>
-              validates App Store purchases and manages subscription
-              entitlements. It may process device identifiers and purchase /
-              transaction information.
+              validates App Store and Google Play purchases and manages
+              subscription entitlements. It may process device identifiers and
+              purchase / transaction information.
             </li>
             <li>
               <strong>Supabase</strong> —
@@ -111,10 +117,11 @@
               hosts the Art Block backend. Cloud backup of your practice
               content, your social profile, your shared sessions and any cover
               photos you attach to them, your follows / groups / likes /
-              comments, your in-app notifications, and your moderation actions
-              (blocks, mutes, reports) are stored on Supabase infrastructure.
-              Files (such as session cover photos, profile avatars, and group
-              avatars / banners) are kept in Supabase Storage.
+              comments, your in-app notifications, push device tokens we
+              register for social alerts, and your moderation actions (blocks,
+              mutes, reports) are stored on Supabase infrastructure. Files
+              (such as session cover photos, profile avatars, and group avatars
+              / banners) are kept in Supabase Storage.
             </li>
           </ul>
           <p>
@@ -137,27 +144,28 @@
           <h3>1. Account and sign-in</h3>
           <p>
             To use the Service, you must <strong>sign in</strong> and create an
-            account on our backend
-            (hosted by <strong>Supabase</strong>). You can sign in with
-            <strong>Sign in with Apple</strong> or with <strong>email and
-            password</strong>. We store your account identifier, session
-            tokens, and (for email sign-in) your email address as needed to
-            authenticate you. If you use Sign in with Apple, Apple may share
-            your name or email with us according to the choices you make in
-            Apple’s sign-in sheet.
+            account on our backend (hosted by <strong>Supabase</strong>).
+            Depending on your platform, you can sign in with
+            <strong>Sign in with Apple</strong> (iOS),
+            <strong>Sign in with Google</strong> (Android), and/or
+            <strong>email and password</strong>. We store your account
+            identifier, session tokens, and (for email sign-in) your email
+            address as needed to authenticate you. If you use Sign in with
+            Apple, Apple may share your name or email with us according to the
+            choices you make in Apple’s sign-in sheet. If you use Sign in with
+            Google, Google may share basic account information (such as your
+            email) with us according to the permissions you grant.
           </p>
           <p>
             New email accounts may need to <strong>confirm their email
             address</strong> before sign-in completes, depending on how our
-            authentication service is configured. We may add optional
-            <strong>Sign in with Google</strong> later; we will update this
-            policy before that ships.
+            authentication service is configured.
           </p>
           <p>
             Sign-in credentials and tokens are stored on your device. Signing
             out clears local practice data on the device; your cloud backup
-            remains tied to your account until you delete it or request
-            account deletion.
+            remains tied to your account until you delete it or delete your
+            account.
           </p>
 
           <h3>2. Practice content (cloud backup and on-device photos)</h3>
@@ -224,18 +232,27 @@
             this data.
           </p>
 
-          <h3>6. In-app notifications</h3>
+          <h3>6. Notifications (in-app, local, and optional push)</h3>
           <p>
             When someone follows you, requests to follow you, accepts your
             follow request, or likes / comments on a session you shared, we
-            create an in-app notification row referencing the actor and the
-            related entity. You can <strong>turn most notification categories
-            off in Settings</strong> (follow, likes, comments). Follow-request
-            and follow-accepted notifications stay on because they are
-            actionable. All notifications today are
-            <strong>in-app only</strong>; we do not currently send marketing or
-            push notifications. Practice reminders are scheduled as
-            <strong>local notifications</strong> on your device.
+            create an <strong>in-app notification</strong> row referencing the
+            actor and the related entity. You can
+            <strong>turn most notification categories off in Settings</strong>
+            (follow, likes, comments). Follow-request and follow-accepted
+            notifications stay on because they are actionable.
+          </p>
+          <p>
+            Practice reminders are scheduled as
+            <strong>local notifications</strong> on your device. If you grant
+            notification permission, we may also send
+            <strong>optional social push notifications</strong> for those same
+            social events (not marketing). On iOS this uses Apple’s push
+            service (APNs); on Android this uses Firebase Cloud Messaging. We
+            store a device push token on our backend so we can deliver those
+            alerts to your signed-in devices. You can revoke notification
+            permission in system settings at any time; we do not send marketing
+            push.
           </p>
 
           <h3>7. Moderation data (blocks, mutes, reports)</h3>
@@ -291,24 +308,26 @@
             is a username search only.
           </p>
 
-          <h3>10. Optional focus shield (Screen Time / Family Controls)</h3>
+          <h3>10. Optional focus shield (iOS — Screen Time / Family Controls)</h3>
           <p>
-            If you enable <strong>focus shielding</strong> during onboarding or
-            in the timer, the app uses Apple’s <strong>Family Controls</strong>
-            / Screen Time APIs to help block distracting apps while you practice.
-            This feature is <strong>optional</strong>. The apps or categories you
-            select are processed on your device through Apple’s frameworks; we
-            do not upload your app-selection list to our servers for advertising.
-            You can change or disable this permission in iOS Settings at any
-            time.
+            On <strong>iOS</strong>, if you enable
+            <strong>focus shielding</strong> during onboarding or in the timer,
+            the app uses Apple’s <strong>Family Controls</strong> / Screen Time
+            APIs to help block distracting apps while you practice. This
+            feature is <strong>optional</strong> and is not available on
+            Android. The apps or categories you select are processed on your
+            device through Apple’s frameworks; we do not upload your
+            app-selection list to our servers for advertising. You can change
+            or disable this permission in iOS Settings at any time.
           </p>
 
           <h3>11. Payment-related information</h3>
           <p>
-            Paid features are purchased through Apple’s App Store. We do not
-            receive your full payment card details. RevenueCat receives the
-            transaction information needed to validate purchases and report
-            entitlements.
+            Paid features are purchased through the
+            <strong>Apple App Store</strong> (iOS) or
+            <strong>Google Play</strong> (Android). We do not receive your full
+            payment card details. RevenueCat receives the transaction
+            information needed to validate purchases and report entitlements.
           </p>
 
           <h3>12. Device and technical data</h3>
@@ -416,22 +435,29 @@
           </p>
           <ul>
             <li>
-              <strong>Apple</strong> — to operate distribution, subscriptions,
-              and platform-level protections.
+              <strong>Apple</strong> — to operate App Store distribution,
+              subscriptions, Sign in with Apple, APNs, and platform-level
+              protections on iOS.
             </li>
             <li>
-              <strong>RevenueCat</strong> — to validate App Store purchases,
-              manage entitlements, and perform related technical operations.
+              <strong>Google</strong> — to operate Google Play distribution,
+              subscriptions, Sign in with Google, and Firebase Cloud Messaging
+              on Android.
+            </li>
+            <li>
+              <strong>RevenueCat</strong> — to validate App Store and Google
+              Play purchases, manage entitlements, and perform related
+              technical operations.
             </li>
             <li>
               <strong>Supabase</strong> — as our hosting and database
               processor, for cloud backup, the social features, file storage,
-              and authentication.
+              authentication, and push-device registration.
             </li>
             <li>
               <strong>Other service providers</strong> — if we add new vendors
-              (for example email delivery, push notifications, or analytics),
-              we will list them here when they apply.
+              (for example email delivery or analytics), we will list them here
+              when they apply.
             </li>
             <li>
               <strong>Legal or safety</strong> — when required by law, legal
@@ -470,12 +496,16 @@
               violates our Terms.
             </li>
             <li>
-              You can request <strong>full account deletion</strong> (cloud
-              backup, social profile, shared sessions, follows, groups, etc.)
-              by contacting us as described under <strong>Contact</strong>.
-              Some moderation records (such as past reports filed by or
-              against you) may be retained where reasonably necessary for
-              safety or to meet legal obligations.
+              You can <strong>delete your account</strong> from inside the app
+              (<strong>Profile → Settings → Delete account</strong>). This
+              removes your cloud backup, social profile, shared sessions,
+              follows, groups, and related account data. Step-by-step
+              instructions are on our
+              <a href="../account-management/">account management</a> page. You
+              may also contact us if you need help. Some moderation records
+              (such as past reports filed by or against you) may be retained
+              where reasonably necessary for safety or to meet legal
+              obligations.
             </li>
             <li>
               If you are in Canada, including Quebec, you may have rights to
@@ -513,15 +543,17 @@
             We may update this policy from time to time. When we do, we will
             post the updated version on this page and change the “Last
             updated” date above. If we materially expand what we collect — for
-            example by adding push notifications, a public web profile,
-            advertising, or new third-party processors — we will surface a
-            notice in the app where practicable.
+            example by adding a public web profile, advertising, or new
+            third-party processors — we will surface a notice in the app where
+            practicable.
           </p>
 
           <h2>Contact</h2>
           <p>
             Questions about this policy, support, or requests regarding your
-            personal information (including <strong>account deletion</strong>):
+            personal information (including help with
+            <strong>account deletion</strong>, which is also available in-app;
+            see <a href="../account-management/">account management</a>):
           </p>
           <ul>
             <li>
@@ -534,19 +566,20 @@
             </li>
             <li>
               You may also use the developer contact channel shown on the
-              <strong>Apple App Store</strong> listing for Art Block.
+              <strong>Apple App Store</strong> or
+              <strong>Google Play</strong> listing for Art Block.
             </li>
           </ul>
           <p class="legal-meta">
             <strong>Data controller:</strong> Vardar Studio Inc. (Quebec, Canada),
-            developer of Art Block on the Apple App Store.
+            developer of Art Block on the Apple App Store and Google Play.
           </p>
 
           <p>
-            Apple Inc. has its own privacy policy governing its platforms; for
-            App Store, iOS, and related payment processing, see Apple’s
-            documentation for how Apple handles data. Supabase and RevenueCat
-            also publish their own privacy policies; see the links above.
+            Apple and Google have their own privacy policies governing their
+            platforms and services (App Store / iOS / APNs, Google Play /
+            Sign-In / Firebase). Supabase and RevenueCat also publish their
+            own privacy policies; see the links above.
           </p>
         </div>
       </article>
