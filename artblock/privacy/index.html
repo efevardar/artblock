@@ -57,7 +57,7 @@
       <article class="legal-doc-content">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">
-          Last updated: <strong>July 30, 2026</strong>
+          Last updated: <strong>September 7, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
@@ -121,7 +121,12 @@
               register for social alerts, and your moderation actions (blocks,
               mutes, reports) are stored on Supabase infrastructure. Files
               (such as session cover photos, profile avatars, and group avatars
-              / banners) are kept in Supabase Storage.
+              / banners) are kept in Supabase Storage. Public
+              <strong>app content</strong> (for example discovery banners,
+              guided-session and reference-pack covers, and catalog metadata)
+              and <strong>published art-event listing images</strong> also live
+              in Supabase Storage so the app can load them without bundling
+              every asset in the binary.
             </li>
           </ul>
           <p>
@@ -303,12 +308,36 @@
             stored as files in Supabase Storage.
           </p>
           <p>
-            Art Block <strong>does not</strong> read your contacts, calendar,
-            location, or microphone for advertising. The “Find friends” screen
-            is a username search only.
+            Art Block <strong>does not</strong> read your contacts, calendar, or
+            microphone, and <strong>does not</strong> use location for
+            advertising. The “Find friends” screen is a username search only.
+            Optional location use for Events Near Me is described below.
           </p>
 
-          <h3>10. Optional focus shield (iOS — Screen Time / Family Controls)</h3>
+          <h3>10. Approximate location (Events Near Me — optional)</h3>
+          <p>
+            If you open <strong>Events Near Me</strong> (or related discovery
+            cards on Today) and grant
+            <strong>location while using the app</strong>, Art Block may read
+            your approximate device coordinates (roughly
+            kilometre-level accuracy) and send them to our backend on Supabase
+            so we can return published art events near you. Location is
+            requested <strong>when in use only</strong> — we do not seek
+            always-on or background location for this feature.
+          </p>
+          <p>
+            Coordinates are used <strong>at query time</strong> to filter
+            nearby listings. We do <strong>not</strong> store your location as
+            a lasting profile field, and we do <strong>not</strong> use it for
+            advertising or marketing. You can deny or later revoke location
+            permission in system settings; Events Near Me still works without
+            it by showing a broader set of upcoming events that are not
+            filtered to your area. Event listing content itself (titles,
+            venues, times, and venue coordinates we publish) is editorial
+            content we host, not personal information about you.
+          </p>
+
+          <h3>11. Optional focus shield (iOS — Screen Time / Family Controls)</h3>
           <p>
             On <strong>iOS</strong>, if you enable
             <strong>focus shielding</strong> during onboarding or in the timer,
@@ -321,7 +350,7 @@
             or disable this permission in iOS Settings at any time.
           </p>
 
-          <h3>11. Payment-related information</h3>
+          <h3>12. Payment-related information</h3>
           <p>
             Paid features are purchased through the
             <strong>Apple App Store</strong> (iOS) or
@@ -330,7 +359,7 @@
             information needed to validate purchases and report entitlements.
           </p>
 
-          <h3>12. Device and technical data</h3>
+          <h3>13. Device and technical data</h3>
           <p>
             Such as device type, operating system, app version, and crash /
             diagnostic information allowed by your device settings. If we add
@@ -347,6 +376,10 @@
               Operate the optional social layer — show your profile to people
               you’ve made yourself visible to, deliver follow / like / comment
               / group activity, and route in-app notifications;
+            </li>
+            <li>
+              Show published art events near you when you use Events Near Me
+              and choose to share approximate location;
             </li>
             <li>Manage subscriptions and entitlements (through RevenueCat);</li>
             <li>
