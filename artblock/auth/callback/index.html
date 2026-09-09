@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opening Art Block…</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link
+      rel="canonical"
+      href="https://www.vardarstudio.com/artblock/auth/callback/"
+    />
+    <link rel="stylesheet" href="../../../css/main.css?v=4" />
+    <script>
+      (function () {
+        // Keep query + hash (Supabase puts tokens in the fragment).
+        if (/\/index\.html$/i.test(location.pathname)) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.replace(/\/index\.html$/i, "/") +
+              location.search +
+              location.hash
+          );
+        }
+
+        var customScheme = "artblock://auth/callback" + location.search + location.hash;
+
+        // Fallback open for browsers that didn't hand off via Android App Links.
+        setTimeout(function () {
+          window.location.href = customScheme;
+        }, 50);
+      })();
+    </script>
+  </head>
+  <body class="legal-doc artblock auth-status">
+    <div class="artblock-scenery artblock-scenery--minimal" aria-hidden="true">
+      <div class="artblock-scenery__tile"></div>
+    </div>
+    <header class="ab-topbar">
+      <a href="../../../" class="ab-meta ab-topbar-link"
+        ><span class="ab-mark" aria-hidden="true">✦</span> Vardar Studio</a
+      >
+    </header>
+    <main class="auth-status-main">
+      <article class="ab-card auth-status-card">
+        <img
+          class="auth-status-icon"
+          src="../../../images/AppIcon.png"
+          alt="Art Block"
+          width="72"
+          height="72"
+          decoding="async"
+        />
+        <h1>Opening Art Block</h1>
+        <p class="auth-status-lead">
+          If the app doesn’t open automatically, tap the button below. Keep this
+          page’s link intact — it finishes email confirmation or password reset.
+        </p>
+        <p style="margin-top: 1.25rem">
+          <a
+            id="open-app"
+            class="ab-topbar-link"
+            href="artblock://auth/callback"
+            >Open Art Block</a
+          >
+        </p>
+      </article>
+    </main>
+    <footer class="site-footer legal-doc-footer">
+      <div class="wrap">
+        <p class="copyright">
+          © <span id="year"></span> Art Block. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      // Point the button at the same query/hash Supabase appended.
+      document.getElementById("open-app").href =
+        "artblock://auth/callback" + location.search + location.hash;
+    </script>
+  </body>
+</html>

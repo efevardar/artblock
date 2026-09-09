@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.artblock.app",
+      "sha256_cert_fingerprints": [
+        "71:59:80:D2:26:6F:CD:5B:85:46:42:BB:FA:99:67:E2:18:0E:22:FD:10:E7:0E:53:04:ED:0A:25:2C:A4:77:36"
+      ]
+    }
+  }
+]

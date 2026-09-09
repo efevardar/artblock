@@ -57,7 +57,7 @@
       <article class="legal-doc-content">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">
-          Last updated: <strong>September 7, 2026</strong>
+          Last updated: <strong>September 9, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
@@ -118,8 +118,11 @@
               content, your social profile, your shared sessions and any cover
               photos you attach to them, your follows / groups / likes /
               comments, your in-app notifications, push device tokens we
-              register for social alerts, and your moderation actions (blocks,
-              mutes, reports) are stored on Supabase infrastructure. Files
+              register for social and optional practice come-back alerts, a
+              coarse <strong>last-active timestamp</strong> used only to time
+              those come-back reminders, your come-back reminder preference,
+              and your moderation actions (blocks, mutes, reports) are stored
+              on Supabase infrastructure. Files
               (such as session cover photos, profile avatars, and group avatars
               / banners) are kept in Supabase Storage. Public
               <strong>app content</strong> (for example discovery banners,
@@ -249,15 +252,33 @@
           </p>
           <p>
             Practice reminders are scheduled as
-            <strong>local notifications</strong> on your device. If you grant
-            notification permission, we may also send
-            <strong>optional social push notifications</strong> for those same
-            social events (not marketing). On iOS this uses Apple’s push
-            service (APNs); on Android this uses Firebase Cloud Messaging. We
-            store a device push token on our backend so we can deliver those
-            alerts to your signed-in devices. You can revoke notification
-            permission in system settings at any time; we do not send marketing
-            push.
+            <strong>local notifications</strong> on your device (for example on
+            days you scheduled practice, and a gentle week-streak note when
+            needed). If you grant notification permission, we may also send:
+          </p>
+          <ul>
+            <li>
+              <strong>Optional social push notifications</strong> for the same
+              social events described above (not marketing).
+            </li>
+            <li>
+              <strong>Optional practice come-back push notifications</strong>
+              if you have not opened the app for a while (for example around
+              7 and 14 days of inactivity). These are limited practice
+              reminders — a short, soft note that your schedule is still here —
+              and we stop after that window until you return. They are
+              <strong>not</strong> ads or promotional marketing. You can turn
+              come-back reminders off in Profile → Settings → Reminders.
+            </li>
+          </ul>
+          <p>
+            On iOS this uses Apple’s push service (APNs); on Android this uses
+            Firebase Cloud Messaging. We store a device push token on our
+            backend so we can deliver those alerts to your signed-in devices,
+            and we may store a last-active timestamp on your account solely to
+            decide when a come-back reminder is appropriate. You can revoke
+            notification permission in system settings at any time; we do not
+            send marketing push.
           </p>
 
           <h3>7. Moderation data (blocks, mutes, reports)</h3>
@@ -512,7 +533,10 @@
               follows require <strong>manual approval</strong>, the
               <strong>default audience</strong> for shared sessions, and which
               <strong>notification categories</strong> generate activity rows
-              for you.
+              for you. You can also turn off
+              <strong>practice day</strong>, <strong>week streak</strong>, and
+              <strong>come-back</strong> reminders in Profile → Settings →
+              Reminders.
             </li>
             <li>
               You can <strong>delete</strong> your shared sessions, likes,
