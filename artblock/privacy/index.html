@@ -57,7 +57,7 @@
       <article class="legal-doc-content">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">
-          Last updated: <strong>September 9, 2026</strong>
+          Last updated: <strong>October 19, 2026</strong>
         </p>
 
         <div class="legal-doc-prose">
@@ -131,12 +131,25 @@
               in Supabase Storage so the app can load them without bundling
               every asset in the binary.
             </li>
+            <li>
+              <strong>PostHog</strong> —
+              <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog</a>
+              provides product analytics so we can understand how the app is
+              used and improve it. It may process a pseudonymous account
+              identifier (your Art Block user id), device and app technical
+              data (such as device type, OS, and app version), screen / feature
+              usage events, and subscription-related product events (for
+              example whether the Pro paywall was viewed, dismissed, or
+              purchased). We do <strong>not</strong> use PostHog for
+              advertising, cross-app tracking, or selling data. Session replay
+              is off.
+            </li>
           </ul>
           <p>
-            Supabase data is currently hosted on infrastructure located outside
-            Canada (typically in the United States, depending on the
-            project region). If we move to a different region we will update
-            this policy.
+            Supabase and PostHog data are currently processed on infrastructure
+            located outside Canada (typically in the United States, depending
+            on the project region). If we move to a different region we will
+            update this policy.
           </p>
 
           <h2>Information we collect</h2>
@@ -380,12 +393,26 @@
             information needed to validate purchases and report entitlements.
           </p>
 
-          <h3>13. Device and technical data</h3>
+          <h3>13. Device, technical, and product-analytics data</h3>
           <p>
             Such as device type, operating system, app version, and crash /
-            diagnostic information allowed by your device settings. If we add
-            third-party crash or analytics tools, we will list them here and
-            update this policy before they go live.
+            diagnostic information allowed by your device settings.
+          </p>
+          <p>
+            We use <strong>PostHog</strong> for first-party product analytics
+            inside the Art Block apps. Events may include app opens / lifecycle
+            signals, which main screens you open, whether you complete
+            onboarding, sign-in method (not your password), that a practice
+            session was logged (for example focused time length and whether a
+            photo or mediums were attached — not the photo or note contents),
+            that a social session was published (visibility and whether a cover
+            was attached — not the cover image itself), and Pro paywall /
+            subscription status events. Events are linked to your Art Block
+            account id after you sign in so we can see product funnels over
+            time. We do not send your email, practice notes, session diary
+            photos, or payment card details to PostHog. If we add a separate
+            crash-reporting vendor later, we will list it here before it goes
+            live.
           </p>
 
           <h2>How we use information</h2>
@@ -403,6 +430,11 @@
               and choose to share approximate location;
             </li>
             <li>Manage subscriptions and entitlements (through RevenueCat);</li>
+            <li>
+              Analyse product usage (through PostHog) so we can understand
+              what works, fix friction, and improve features such as practice
+              flow and Pro offers — not to advertise to you or sell your data;
+            </li>
             <li>
               Enforce our Terms of Use and protect users — for example by
               honouring blocks and mutes, applying server-side rate limits,
@@ -452,7 +484,8 @@
             Cloud backup, social, and moderation data are stored on
             <strong>Supabase</strong> infrastructure (currently outside Canada,
             typically in the United States). Subscription processing through
-            RevenueCat may also involve servers outside Canada.
+            RevenueCat, and product analytics through PostHog, may also involve
+            servers outside Canada.
           </p>
           <p>
             We retain personal information only as long as reasonably needed
@@ -509,9 +542,16 @@
               authentication, and push-device registration.
             </li>
             <li>
+              <strong>PostHog</strong> — as our product-analytics processor, for
+              usage events and related technical data described under
+              <strong>Device, technical, and product-analytics data</strong>
+              above. See
+              <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog’s privacy policy</a>.
+            </li>
+            <li>
               <strong>Other service providers</strong> — if we add new vendors
-              (for example email delivery or analytics), we will list them here
-              when they apply.
+              (for example email delivery or a crash reporter), we will list
+              them here when they apply.
             </li>
             <li>
               <strong>Legal or safety</strong> — when required by law, legal
@@ -635,8 +675,8 @@
           <p>
             Apple and Google have their own privacy policies governing their
             platforms and services (App Store / iOS / APNs, Google Play /
-            Sign-In / Firebase). Supabase and RevenueCat also publish their
-            own privacy policies; see the links above.
+            Sign-In / Firebase). Supabase, RevenueCat, and PostHog also publish
+            their own privacy policies; see the links above.
           </p>
         </div>
       </article>
